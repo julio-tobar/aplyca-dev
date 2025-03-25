@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/aplyca-julio/clientlibs"/>
+    <filter root="/apps/aplyca-julio/components"/>
+    <filter root="/apps/aplyca-julio/i18n"/>
+</workspaceFilter>

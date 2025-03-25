@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aplyca-julio" mode="merge"/>
+    <filter root="/content/aplyca-julio" mode="merge"/>
+    <filter root="/content/dam/aplyca-julio" mode="merge">
+        <exclude pattern="/content/dam/aplyca-julio(/.*)?"/>
+        <include pattern="/content/dam/aplyca-julio/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/aplyca-julio/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aplyca-julio" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,9 @@
+<div data-sly-use.banners="com.aplyca.julio.core.models.BannersModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.items="${banners.items}"
+     data-cmp-data-layer="${banners.data.json}"
+     id="${banners.id}"
+     class="cmp-banners">
+banners content....
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!items, classAppend='cmp-banners'}"></sly>

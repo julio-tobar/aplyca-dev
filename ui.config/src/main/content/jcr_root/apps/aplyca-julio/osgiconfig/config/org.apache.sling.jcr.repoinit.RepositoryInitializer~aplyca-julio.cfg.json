@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/aplyca-julio",
+        "create path (nt:unstructured) /content/dam/aplyca-julio/jcr:content",
+        "set properties on /content/dam/aplyca-julio/jcr:content\n  set cq:conf{String} to /conf/aplyca-julio\n  set jcr:title{String} to \"APLYCA tutorial site\"\nend"
+    ]
+}

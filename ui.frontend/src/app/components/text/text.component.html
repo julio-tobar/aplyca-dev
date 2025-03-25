@@ -1,0 +1,7 @@
+ <div [id]="id"  *ngIf="!showPlaceholder && text">
+    <div [innerHTML]="text | safeHtml"></div>
+   <span>{{ company }}</span>
+ </div>
+  <div *ngIf="showPlaceholder"  class="cq-placeholder">
+    {{ componentName }}
+</div>

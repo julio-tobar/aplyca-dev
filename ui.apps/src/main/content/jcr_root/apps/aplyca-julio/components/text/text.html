@@ -1,0 +1,10 @@
+<div data-sly-use.text="com.aplyca.julio.core.models.TextModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.displayText="${text.text}"
+     data-cmp-data-layer="${text.data.json}"
+     id="${text.id}"
+     class="cmp-text">
+     ${text.text @ context="html"}
+</div>
+<span class="cmp-text__company">${text.company}</span>
+<sly data-sly-call="${template.placeholder @ isEmpty=!displayText, classAppend='cmp-text'}"></sly>

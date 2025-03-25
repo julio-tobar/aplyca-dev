@@ -1,0 +1,11 @@
+ id: {{id}} <br>
+ contentFragmentPath: {{ contentFragmentPath }} <br>
+ quantity: {{ quantity }} <br>
+ 
+<div *ngFor="let banner of banners">
+{{ banner.title }}
+</div>
+
+  <div *ngIf="showPlaceholder"  class="cq-placeholder">
+    {{ componentName }}
+</div>

@@ -1,0 +1,9 @@
+
+.cq-placeholder {
+  color: #6e6e6e;
+  border-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-style: solid;
+  border-width: 0.125rem;
+  margin: -0.125rem;
+}
