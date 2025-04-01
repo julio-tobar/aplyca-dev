@@ -4,14 +4,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AEMComponent } from '../aem-component/aem-component.component';
 
 @Component({
-  selector: 'app-productgrid',
+  selector: 'app-producttiles',
   styleUrls: ['./productgrid.component.css'],
   templateUrl: './productgrid.component.html'
 })
 export class ProductgridComponent extends AEMComponent implements AfterContentInit {
   @Input() componentName: string = undefined;
   @Input() id: string;
-  @Input() productItem: any;
+  @Input() listItems: any;
   
   constructor(private sanitizer: DomSanitizer, 
                       element: ElementRef) {
@@ -19,6 +19,6 @@ export class ProductgridComponent extends AEMComponent implements AfterContentIn
   }
   
   ngAfterContentInit(): void {
-     super.setShowPlaceholder(this.productItem == undefined);
+     super.setShowPlaceholder(this.listItems == undefined);
   }
 }

@@ -1,5 +1,8 @@
- <div [id]="id"  *ngIf="!showPlaceholder && productItem">
-{{ componentName }}
+<div [id]="id"  *ngIf="!showPlaceholder && listItems">
+    <div *ngFor="let product  of listItems">
+        <h4>{{ product.title }}</h4>
+        url: <a href="{{ product.url }}.html">{{ product.url }}</a>
+    </div>
  </div>
   <div *ngIf="showPlaceholder"  class="cq-placeholder">
     {{ componentName }}

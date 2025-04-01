@@ -2,14 +2,19 @@ package com.aplyca.julio.core.models.impl;
 
 import com.adobe.cq.commerce.api.Product;
 import com.adobe.cq.commerce.common.CommerceHelper;
+import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.wcm.core.components.models.List;
 import com.adobe.cq.wcm.core.components.models.ListItem;
+import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
 import com.aplyca.julio.core.models.ProductGrid;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import javax.annotation.PostConstruct;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
@@ -21,13 +26,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Model(adaptables = {SlingHttpServletRequest.class}, 
-                adapters = {List.class}, 
+                adapters = {ProductGrid.class, ComponentExporter.class}, 
                 resourceType = {"aplyca-julio/components/productgrid"})
 @Exporter(name = "jackson", 
 extensions = {"json"})
-public class ProductGridImpl implements ProductGrid, List {
+public class ProductGridImpl extends AbstractComponentImpl  implements ProductGrid {
   
-  private static final Logger LOGGER = LoggerFactory.getLogger(ProductGridItemImpl.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(ProductGridImpl.class);
   private static final String COMPONENT_NAME = "Product Grid Component";
   
   @Self
@@ -65,10 +70,12 @@ public class ProductGridImpl implements ProductGrid, List {
     return this.delegate.getDateFormatString();
   }
   
+  /*  we don't want to change resource type for this model when rendered as json */
+  /*
   public String getExportedType() {
     return this.delegate.getExportedType();
   }
-
+*/
   @Override
   public String getComponentName() {
     return COMPONENT_NAME;
