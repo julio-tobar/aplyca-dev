@@ -12,8 +12,6 @@ import javax.jcr.Session;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
-import javax.jcr.query.Row;
-import javax.jcr.query.RowIterator;
 import javax.jcr.Node;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -23,7 +21,6 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.adobe.cq.export.json.ComponentExporter;
@@ -33,14 +30,10 @@ import com.adobe.cq.wcm.core.components.models.datalayer.builder.DataLayerBuilde
 import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
 import com.aplyca.julio.core.beans.BannersBean;
 import com.aplyca.julio.core.models.BannersModel;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.designer.Style;
 import com.adobe.cq.dam.cfm.ContentElement;
 import com.adobe.cq.dam.cfm.ContentFragment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jdk.internal.org.jline.utils.Log;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -56,9 +49,6 @@ public class BannersModelImpl extends AbstractComponentImpl implements BannersMo
   private final Logger LOG = LoggerFactory.getLogger(getClass());
   private static final String COMPONENT_NAME = "Banners Component";
   private static final String CONTENT_FRAGMENT_MODEL = "/conf/aplyca-julio/settings/dam/cfm/models/aplyca-banners";
-
-  @Self
-  private SlingHttpServletRequest request;
   
   @ScriptVariable
   private Resource resource;
