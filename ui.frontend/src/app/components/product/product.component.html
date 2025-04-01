@@ -1,0 +1,9 @@
+ <div [id]="id"  *ngIf="!showPlaceholder && productItem">
+      <h2>{{ productItem.title }}</h2>
+      <p>{{ productItem.description }} </p>
+      {{ productItem.price }} <br>
+      <img src="{{ productItem.imageUrl }}" width="200px"/>
+ </div>
+  <div *ngIf="showPlaceholder"  class="cq-placeholder">
+    {{ componentName }}
+</div>

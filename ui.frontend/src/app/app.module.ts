@@ -14,10 +14,13 @@ import './components/container/container.component';
 import './components/responsive-grid/responsive-grid.component';
 import { TextComponent } from './components/text/text.component';
 import { BannersComponent } from './components/banners/banners.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductgridComponent } from './components/productgrid/productgrid.component';
 
 MapTo('aplyca-julio/components/text')(TextComponent);
 MapTo('aplyca-julio/components/banners')(BannersComponent);
-
+MapTo('aplyca-julio/components/product')(ProductComponent);
+MapTo('aplyca-julio/components/productgrid')(ProductgridComponent);
 
 @NgModule({
   imports: [
@@ -27,7 +30,7 @@ MapTo('aplyca-julio/components/banners')(BannersComponent);
   ],
   providers: [ ModelManagerService,
     { provide: APP_BASE_HREF, useValue: '/' } ],
-  declarations: [SafeHtmlPipe, AppComponent, PageComponent, TextComponent,  BannersComponent],
+  declarations: [SafeHtmlPipe, AppComponent, PageComponent, TextComponent,  BannersComponent, ProductComponent, ProductgridComponent],
   entryComponents: [PageComponent],
   bootstrap: [ AppComponent ]
 })
